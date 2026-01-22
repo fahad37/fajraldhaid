@@ -1,0 +1,502 @@
+:root {
+    --primary-color: #00A651; /* Green */
+    --secondary-color: #004d26; /* Darker Green */
+    --text-color: #333333;
+    --light-text: #666666;
+    --background-color: #FFFFFF;
+    --white: #FFFFFF;
+    --accent-color: #FFD700; /* Gold for premium touches */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--white); /* Hero title white for contrast on image */
+}
+
+.hero-content span {
+    color: var(--primary-color);
+    background: rgba(255,255,255,0.9);
+    padding: 0 10px;
+    border-radius: 4px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 166, 81, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Services Section */
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.services {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 1.5rem;
+}
+
+.service-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-content p {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Features/Why Us */
+.features {
+    background-color: #f9f9f9;
+    padding: 5rem 5%;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Floating Action Buttons */
+.floating-actions {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: var(--transition);
+    text-decoration: none;
+    position: relative;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+}
+
+.call-btn {
+    background-color: #007bff; /* Blue for call to distinguish */
+}
+
+/* Tooltip for buttons */
+.float-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 70px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.float-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Chatbot */
+.chatbot-toggler {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: var(--transition);
+}
+
+.chatbot-toggler span {
+    color: var(--white);
+    font-size: 24px;
+}
+
+.chatbot {
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    width: 350px;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: bottom right;
+    transition: all 0.1s ease;
+    z-index: 1000;
+}
+
+.show-chatbot .chatbot {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chatbot header {
+    background: var(--primary-color);
+    padding: 16px 0;
+    text-align: center;
+    position: relative;
+}
+
+.chatbot header h2 {
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.chatbot header span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    color: var(--white);
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.chatbox {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px 20px 70px;
+}
+
+.chat-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    background: #fff;
+    padding: 3px 20px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input textarea {
+    height: 55px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 15px 15px 15px 0;
+    font-size: 0.95rem;
+}
+
+.chat-input span {
+    align-self: flex-end;
+    color: var(--primary-color);
+    cursor: pointer;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    font-size: 1.35rem;
+}
+
+.chat-input textarea:valid ~ span {
+    visibility: visible;
+}
+
+.chatbox .chat {
+    display: flex;
+    list-style: none;
+}
+
+.chatbox .incoming span {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    background: var(--primary-color);
+    text-align: center;
+    line-height: 32px;
+    border-radius: 4px;
+    margin: 0 10px 7px 0;
+    align-self: flex-end;
+}
+
+.chatbox .outgoing {
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.chatbox .chat p {
+    color: #fff;
+    max-width: 75%;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    border-radius: 10px 10px 0 10px;
+    background: var(--primary-color);
+    word-wrap: break-word;
+}
+
+.chatbox .incoming p {
+    color: #000;
+    background: #f2f2f2;
+    border-radius: 10px 10px 10px 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 4rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-links {
+        display: none; /* Simple mobile hide for now, could add hamburger */
+    }
+}
